@@ -2,25 +2,13 @@ package io.m2mcloud.www.collections;
 
 import java.util.Date;
 
-<<<<<<< HEAD
 import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Id;
 
-=======
-import org.bson.types.ObjectId;
-import org.mongodb.morphia.annotations.Entity;
-import org.mongodb.morphia.annotations.Id;
-
-
->>>>>>> origin/master
 @Entity(value = "products", noClassnameStored = true)
 public class Products {
 
 	@Id
-<<<<<<< HEAD
-=======
-	private ObjectId objectId;
->>>>>>> origin/master
 	private String productId;
 	private String secret;
 	private String productName;
@@ -29,16 +17,6 @@ public class Products {
 	private int online;
 	private int total;
 	
-<<<<<<< HEAD
-=======
-	
-	public ObjectId getObjectId() {
-		return objectId;
-	}
-	public void setObjectId(ObjectId objectId) {
-		this.objectId = objectId;
-	}
->>>>>>> origin/master
 	public String getProductId() {
 		return productId;
 	}
@@ -81,10 +59,4 @@ public class Products {
 	public void setTotal(int total) {
 		this.total = total;
 	}
-<<<<<<< HEAD
-=======
-	
-	
-	
->>>>>>> origin/master
 }

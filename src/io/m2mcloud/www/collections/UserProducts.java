@@ -1,18 +1,10 @@
 package io.m2mcloud.www.collections;
 
-<<<<<<< HEAD
 import org.mongodb.morphia.annotations.Embedded;
 
 @Embedded
 public class UserProducts {
 
-=======
-import org.mongodb.morphia.annotations.Reference;
-
-public class UserProducts {
-
-	@Reference
->>>>>>> origin/master
 	private String productId;
 	private String role;
 	
