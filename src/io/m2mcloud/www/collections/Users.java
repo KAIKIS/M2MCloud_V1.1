@@ -1,6 +1,10 @@
 package io.m2mcloud.www.collections;
 
+import io.m2mcloud.www.collections.UserProducts;
+
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.bson.types.ObjectId;
 import org.mongodb.morphia.annotations.Embedded;
@@ -21,6 +25,12 @@ public class Users {
 	@Embedded
 	private UserProducts products;
 	
+<<<<<<< HEAD
+=======
+	@Embedded("products")
+	private List<UserProducts> products = new ArrayList<UserProducts>();
+	
+>>>>>>> origin/master
 	public ObjectId getId() {
 		return id;
 	}
@@ -45,10 +55,20 @@ public class Users {
 	public void setCreateTime(Date createTime) {
 		this.createTime = createTime;
 	}
+<<<<<<< HEAD
 	public UserProducts getProducts() {
 		return products;
 	}
 	public void setProducts(UserProducts products) {
 		this.products = products;
 	}
+=======
+	public List<UserProducts> getProducts() {
+		return products;
+	}
+	public void setProducts(List<UserProducts> products) {
+		this.products = products;
+	}
+	
+>>>>>>> origin/master
 }
