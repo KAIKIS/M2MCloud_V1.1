@@ -19,11 +19,13 @@ public class UserRegister {
 		if(!db.Connect()){
 			return "连接数据库失败";
 		}
+
 		datastore = db.getDatastore();
 		String tokenId = MD5.GetMD5Code(userName + userPwd);
 		users = datastore.createQuery(Users.class)
 						.field("tokenId").equal(tokenId).get();//获取查找到的第一个文档。
 		if(users == null){
+			users = new Users();
 			users.setId(new ObjectId());
 			users.setTokenId(tokenId);
 			users.setUserName(userName);
@@ -36,8 +38,7 @@ public class UserRegister {
 			db.Disconnect();
 			return "用户已经存在";
 		}
-		
-		
+
 	}
 	
 }
