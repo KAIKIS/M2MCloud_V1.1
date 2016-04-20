@@ -9,7 +9,7 @@ public class RegisterTest {
 //		// TODO 自动生成的方法存根
 //		UserRegister register = new UserRegister();
 //		UserRegisterResult userDoc = new UserRegisterResult();
-//		String result = register.insertUser("zhangkai", "3573551");
+//		String result = register.insertUser("18380421129", "3573551");
 //		
 //		if(result.equals("连接数据库失败")){
 //			
