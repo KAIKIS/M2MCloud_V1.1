@@ -9,7 +9,7 @@ public class loginTest {
 //		// TODO 自动生成的方法存根
 //		UserLogin login = new UserLogin();
 //		UserLoginResult userDoc = new UserLoginResult();
-//		String result = login.findUser("zhan2gkai", "3573551");
+//		String result = login.findUser("zhangkai", "123456");
 //		if(result.equals("连接数据库失败")){
 //			
 //		}

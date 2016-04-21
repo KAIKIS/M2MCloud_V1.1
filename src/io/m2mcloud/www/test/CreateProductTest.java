@@ -8,7 +8,7 @@ public class CreateProductTest {
 //		// TODO 自动生成的方法存根
 //
 //		CreateProduct createProduct = new CreateProduct();
-//		System.out.println(createProduct.insertProduct("2BFE01657FAA6425F3E4C1D974026250", "一个测试", "测试"));
+//		System.out.println(createProduct.insertProduct("A4C24CDFE7D33396FD62B39425BDC13A", "测试", "测试"));
 //		
 //	}
 

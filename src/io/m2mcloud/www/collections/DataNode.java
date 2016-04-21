@@ -10,7 +10,6 @@ import org.mongodb.morphia.annotations.Indexed;
 public class DataNode {
 	
 	private String nodeId;
-	@Indexed(options = @IndexOptions(unique = true))
 	private String nodeName;
 	private String nodeType;
 	private String units;

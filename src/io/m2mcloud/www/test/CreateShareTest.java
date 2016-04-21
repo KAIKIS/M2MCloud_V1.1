@@ -7,7 +7,7 @@ public class CreateShareTest {
 //	public static void main(String[] args) {
 //		// TODO 自动生成的方法存根
 //		CreateShare createShare = new CreateShare();
-//		createShare.insertShare("2BFE01657FAA6425F3E4C1D974026250", "177B2C09FBB073807598AD9B4238864C", "18380421129");
+//		createShare.insertShare("A4C24CDFE7D33396FD62B39425BDC13A", "9EB39765F58CD1A409A75B628DA61531", "zhangkai");
 //	}
 
 }

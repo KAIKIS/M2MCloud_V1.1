@@ -44,5 +44,11 @@ public class UserUpdatePwd {
 			}
 		}
 	}
+
+	public Users getUsers() {
+		return users;
+	}
+	
+	
 	
 }

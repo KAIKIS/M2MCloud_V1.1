@@ -40,5 +40,11 @@ public class UserRegister {
 		}
 
 	}
+
+	public Users getUsers() {
+		return users;
+	}
+	
+	
 	
 }
