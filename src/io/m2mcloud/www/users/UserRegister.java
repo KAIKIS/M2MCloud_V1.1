@@ -22,22 +22,21 @@ public class UserRegister {
 
 		datastore = db.getDatastore();
 		String tokenId = MD5.GetMD5Code(userName + userPwd);
-		users = datastore.createQuery(Users.class)
-						.field("tokenId").equal(tokenId).get();//获取查找到的第一个文档。
-		if(users == null){
-			users = new Users();
-			users.setId(new ObjectId());
-			users.setTokenId(tokenId);
-			users.setUserName(userName);
-			users.setCreateTime(new Date());
-			datastore.save(users);
-			db.Disconnect();
-			return "用户注册成功";
-		}
-		else{
+		try{
+		users = new Users();
+		users.setId(new ObjectId());
+		users.setTokenId(tokenId);
+		users.setUserName(userName);
+		users.setCreateTime(new Date());
+		datastore.save(users);
+		}catch(com.mongodb.DuplicateKeyException e){
+			System.out.println(e);
 			db.Disconnect();
 			return "用户已经存在";
-		}
+		}	
+		
+		db.Disconnect();
+		return "用户注册成功";
 
 	}
 

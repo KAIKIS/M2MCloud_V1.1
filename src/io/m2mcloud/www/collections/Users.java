@@ -15,6 +15,7 @@ public class Users {
 
 	@Id
 	private ObjectId id;
+	@Indexed(options = @IndexOptions(unique = true))
 	private String tokenId;
 	@Indexed(options = @IndexOptions(unique = true))
 	private String userName;

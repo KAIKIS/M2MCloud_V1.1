@@ -5,12 +5,12 @@ import io.m2mcloud.www.users.UserRegister;
 
 public class RegisterTest {
 
-//	public static void main(String[] args) {
-//		// TODO 自动生成的方法存根
-//		UserRegister register = new UserRegister();
-//		UserRegisterResult userDoc = new UserRegisterResult();
-//		String result = register.insertUser("18380421129", "3573551");
-//		
+	public static void main(String[] args) {
+		// TODO 自动生成的方法存根
+		UserRegister register = new UserRegister();
+		UserRegisterResult userDoc = new UserRegisterResult();
+		String result = register.insertUser("18380421129", "3573551");
+		System.out.println(result);
 //		if(result.equals("连接数据库失败")){
 //			
 //			System.out.println(result);
@@ -22,6 +22,6 @@ public class RegisterTest {
 //		else if(result.equals("用户已经存在")){
 //			System.out.println(result);
 //		}
-//	}
+	}
 
 }
