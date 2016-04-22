@@ -1,26 +1,22 @@
 package io.m2mcloud.www.devices;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import io.m2mcloud.www.collections.DataNode;
 import io.m2mcloud.www.collections.Devices;
+import io.m2mcloud.www.collections.NodeAlarm;
 import io.m2mcloud.www.collections.Users;
 import io.m2mcloud.www.database.DataBase;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import org.mongodb.morphia.Datastore;
 import org.mongodb.morphia.query.Query;
 
-/**
- * 所有用户都能使用
- * @author Kai
- *
- */
-public class GetDataNode {
+public class GetNodeAlarm {
 
 	private DataBase db = new DataBase();
 	private Datastore datastore;
-	private List<DataNode> nodes = new ArrayList<DataNode>(); 
+	private List<NodeAlarm> alarms = new ArrayList<NodeAlarm>(); 
 	
 	public String get(String tokenId, String productId, String mac){
 		if(!db.Connect()){
@@ -43,18 +39,18 @@ public class GetDataNode {
 				return "没有找到设备";
 			}
 			else{
-				int size = devices.getNode().size();
+				int size = devices.getAlarm().size();
 				for (int i = 0; i < size; i++) {
-					nodes.add(devices.getNode().get(i));
+					alarms.add(devices.getAlarm().get(i));
 				}
 				db.Disconnect();
-				return "获取数据点成功";
+				return "获取设备警告成功";
 			}
 		}
 	}
 
-	public List<DataNode> getNode() {
-		return nodes;
+	public List<NodeAlarm> getAlarms() {
+		return alarms;
 	}
-
+	
 }

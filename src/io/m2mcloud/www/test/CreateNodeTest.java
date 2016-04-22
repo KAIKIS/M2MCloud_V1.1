@@ -2,17 +2,30 @@ package io.m2mcloud.www.test;
 
 import io.m2mcloud.www.devices.CreateDataAlarm;
 import io.m2mcloud.www.devices.CreateDataNode;
+import io.m2mcloud.www.devices.DeleteDataNode;
+import io.m2mcloud.www.devices.DeleteDateAlarm;
 
 public class CreateNodeTest {
 
 	public static void main(String[] args) {
-		// TODO 自动生成的方法存根
+//		// TODO 自动生成的方法存根
 //		CreateDataNode node = new CreateDataNode();
-//		node.insertNode("2BFE01657FAA6425F3E4C1D974026250", "177B2C09FBB073807598AD9B4238864C", "321", 
-//				"abc", "asd", "asd", "asd");
-		CreateDataAlarm alarm = new CreateDataAlarm();
-		System.out.println(alarm.insertNode("2BFE01657FAA6425F3E4C1D974026250", "177B2C09FBB073807598AD9B4238864C", "321",
-				"900150983CD24FB0D6963F7D28E17F72", "qwe", "qwe", 12, 21));
+//		System.out.println(node.insertNode("A4C24CDFE7D33396FD62B39425BDC13A", "6B1379A430621F8A1673CC42E4FEF1BE", "123", 
+//				"qwe", "asd", "asd", "asd"));
+		
+//		CreateDataAlarm alarm = new CreateDataAlarm();
+//		alarm.insertNode("A4C24CDFE7D33396FD62B39425BDC13A", "6B1379A430621F8A1673CC42E4FEF1BE", "123",
+//				"53F4899BD407A4C1E7AE5054A36335CA", "qwe", "qwe", 12, 21);
+		
+//		DeleteDateAlarm deleteDateAlarm = new DeleteDateAlarm();
+//		System.out.println(deleteDateAlarm.deleteAlarm("A4C24CDFE7D33396FD62B39425BDC13A", "6B1379A430621F8A1673CC42E4FEF1BE", "123",
+//				"53F4899BD407A4C1E7AE5054A36335CA"));
+		
+//		DeleteDataNode deleteDataNode = new DeleteDataNode();
+//		deleteDataNode.deleteNode("A4C24CDFE7D33396FD62B39425BDC13A", "6B1379A430621F8A1673CC42E4FEF1BE", "123",
+//				"53F4899BD407A4C1E7AE5054A36335CA");
+		
+		
 	}
 
 }

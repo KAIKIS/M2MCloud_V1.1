@@ -16,11 +16,7 @@ public class DataNode {
 	private String nodeDescription;
 	private Boolean store;
 	private Date nodeCreateTime;
-	private String alarmName;
-	private String alarmType;
-	private Object threshold0;
-	private Object threshold1;
-	private Date alarmCreateTime;
+	
 	
 	public String getNodeId() {
 		return nodeId;
@@ -64,34 +60,5 @@ public class DataNode {
 	public void setNodeCreateTime(Date nodeCreateTime) {
 		this.nodeCreateTime = nodeCreateTime;
 	}
-	public String getAlarmName() {
-		return alarmName;
-	}
-	public void setAlarmName(String alarmName) {
-		this.alarmName = alarmName;
-	}
-	public String getAlarmType() {
-		return alarmType;
-	}
-	public void setAlarmType(String alarmType) {
-		this.alarmType = alarmType;
-	}
-	public Object getThreshold0() {
-		return threshold0;
-	}
-	public void setThreshold0(Object threshold0) {
-		this.threshold0 = threshold0;
-	}
-	public Object getThreshold1() {
-		return threshold1;
-	}
-	public void setThreshold1(Object threshold1) {
-		this.threshold1 = threshold1;
-	}
-	public Date getAlarmCreateTime() {
-		return alarmCreateTime;
-	}
-	public void setAlarmCreateTime(Date alarmCreateTime) {
-		this.alarmCreateTime = alarmCreateTime;
-	}
+	
 }

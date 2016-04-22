@@ -21,6 +21,8 @@ public class Devices {
 	private String latitude;
 	@Embedded
 	private List<DataNode> node = new ArrayList<DataNode>();
+	@Embedded
+	private List<NodeAlarm> alarm = new ArrayList<NodeAlarm>();
 	
 	public String getDeviceId() {
 		return deviceId;
@@ -76,5 +78,12 @@ public class Devices {
 	public void setNode(List<DataNode> node) {
 		this.node = node;
 	}
+	public List<NodeAlarm> getAlarm() {
+		return alarm;
+	}
+	public void setAlarm(List<NodeAlarm> alarm) {
+		this.alarm = alarm;
+	}
 
+	
 }

@@ -9,9 +9,9 @@ public class CreateDeviceTest {
 
 	public static void main(String[] args) {
 //		// TODO 自动生成的方法存根
-////		CreateDevices devices = new CreateDevices();
-////		devices.insertDevice("A4C24CDFE7D33396FD62B39425BDC13A", "9EB39765F58CD1A409A75B628DA61531",
-////				"456", "dasdfsa", "ddddd", "121.45", "545.2165");
+//		CreateDevices devices = new CreateDevices();
+//		devices.insertDevice("A4C24CDFE7D33396FD62B39425BDC13A", "6B1379A430621F8A1673CC42E4FEF1BE",
+//				"123", "ccc", "ddddd", "121.45", "545.2165");
 //		GetUserDevices getUserDevices = new GetUserDevices();
 //		getUserDevices.getUD("2BFE01657FAA6425F3E4C1D974026250");
 //		for (int i = 0; i < getUserDevices.getGetDevices().size(); i++) {
