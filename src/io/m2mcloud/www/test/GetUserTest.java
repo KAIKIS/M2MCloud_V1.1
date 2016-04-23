@@ -3,7 +3,6 @@ package io.m2mcloud.www.test;
 import java.util.ArrayList;
 import java.util.List;
 
-import io.m2mcloud.www.collections.Users;
 import io.m2mcloud.www.result.ProductResult;
 import io.m2mcloud.www.result.UsersTokenResult;
 import io.m2mcloud.www.users.GetUser;

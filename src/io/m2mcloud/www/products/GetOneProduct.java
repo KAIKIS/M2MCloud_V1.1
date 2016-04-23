@@ -25,7 +25,7 @@ public class GetOneProduct {
 		}
 		else{
 			products = datastore.createQuery(Products.class)
-							.field("procductId").equal(productId).get();
+							.field("productId").equal(productId).get();
 			if(products == null){
 				db.Disconnect();
 				return "该产品不存在";
