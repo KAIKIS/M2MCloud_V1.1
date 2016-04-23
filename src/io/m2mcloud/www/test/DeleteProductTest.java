@@ -12,7 +12,7 @@ public class DeleteProductTest {
 //				"123456789", "≤‚ ‘…Ë±∏1", "asdasgf", "12.45", "18.45"));
 		
 		DeleteProduct deleteProduct = new DeleteProduct();
-		System.out.println(deleteProduct.delete("A4C24CDFE7D33396FD62B39425BDC13A", "9EB39765F58CD1A409A75B628DA61531"));
+		System.out.println(deleteProduct.delete("A4C24CDFE7D33396FD62B39425BDC13A", "090717BA50376213659C397A86C0F9DF"));
 		
 	}
 

@@ -23,7 +23,7 @@ public class UserLogin {
 						.field("tokenId").equal(tokenId).get();//获取查找到的第一个文档。
 		if(users == null){
 			db.Disconnect();
-			return "用户还未注册";
+			return "用户名或密码错误";
 		}
 		else{
 			db.Disconnect();

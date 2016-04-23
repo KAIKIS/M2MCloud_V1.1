@@ -1,6 +1,6 @@
 package io.m2mcloud.www.result;
 
-public class UserRegisterResult {
+public class UserModifyPasswordResult {
 	private String tokenId;
 	private String result;
 	public String getTokenId() {
@@ -10,7 +10,6 @@ public class UserRegisterResult {
 	public void setTokenId(String tokenId) {
 		this.tokenId = tokenId;
 	}
-
 	public String getResult() {
 		return result;
 	}
@@ -18,5 +17,4 @@ public class UserRegisterResult {
 	public void setResult(String result) {
 		this.result = result;
 	}
-	
 }

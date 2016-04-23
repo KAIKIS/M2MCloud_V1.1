@@ -34,21 +34,34 @@ public class DeleteProduct {
 		
 		if(users == null){
 			db.Disconnect();
-			return "用户无法删除产品";
+			return "用户无权删除产品";
 		}
 		else{
 			//删除Users下的products信息
-			UserProducts up = new UserProducts();
-			up.setProductId(productId);
-			up.setRole("admin");
-			Query<Users> queryProducts = datastore.createQuery(Users.class)
-					.field("products")
-					.hasThisElement(up);
-			UpdateOperations<Users> updateProducts = datastore.createUpdateOperations(Users.class)
-					.removeAll("products", up);
-
-			UpdateResults results = datastore.update(queryProducts, updateProducts);
+			UserProducts up1 = new UserProducts();
+			up1.setProductId(productId);
+			up1.setRole("admin");
 			
+			Query<Users> queryUser1 = datastore.createQuery(Users.class)
+					.field("products")
+					.hasThisElement(up1);
+			UpdateOperations<Users> updateUser1 = datastore.createUpdateOperations(Users.class)
+					.removeAll("products", up1);
+
+			datastore.update(queryUser1, updateUser1);
+			
+			UserProducts up2 = new UserProducts();
+			up2.setProductId(productId);
+			up2.setRole("share");
+			
+			Query<Users> queryUser2 = datastore.createQuery(Users.class)
+					.field("products")
+					.hasThisElement(up2);
+			UpdateOperations<Users> updateUser2 = datastore.createUpdateOperations(Users.class)
+					.removeAll("products", up2);
+
+			datastore.update(queryUser2, updateUser2);
+	
 			//删除Devices下的productId信息
 			Query<Devices> queryDevice = datastore.createQuery(Devices.class)
 												.field("productId").equal(productId);
