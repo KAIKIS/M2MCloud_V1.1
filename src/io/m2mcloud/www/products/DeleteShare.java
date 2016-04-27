@@ -34,7 +34,8 @@ public class DeleteShare {
 		}
 		else{//判断分享者存不存在
 			Users share = datastore.createQuery(Users.class)
-					.field("userName").equal(shareName).get();
+					.field("userName").equal(shareName)
+					.field("products.productId").equal(productId).get();
 			if(share == null){
 				db.Disconnect();
 				return "分享者不存在";
