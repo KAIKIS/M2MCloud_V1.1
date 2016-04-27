@@ -42,26 +42,34 @@ public class CreateDevices {
 		else{//还需要修改total
 			Date date = new Date();
 			String deviceId = MD5.GetMD5Code(productId + mac);
-			Devices devices = new Devices();
-			devices.setDeviceId(deviceId);
-			devices.setMac(mac);
-			devices.setProductId(productId);
-			devices.setDeviceName(deviceName);
-			devices.setAddress(address);
-			devices.setLongitude(longitude);
-			devices.setLatitude(latitude);
-			devices.setCreateTime(date);
-			devices.setOnline(false);
-			
-			datastore.save(devices);
-			
-			Query<Products> queryProduct = datastore.createQuery(Products.class)
-										.field("productId").equal(productId);
-			UpdateOperations<Products> updateProduct = datastore.createUpdateOperations(Products.class)
-										.inc("total", 1);
-			UpdateResults results = datastore.update(queryProduct, updateProduct);
-			db.Disconnect();
-			return "设备创建成功";
+			Query<Devices> queryDevice = datastore.createQuery(Devices.class).field("deviceId").equal(deviceId);
+				
+			if (queryDevice.get() == null) {
+				Devices devices = new Devices();
+				devices.setDeviceId(deviceId);
+				devices.setMac(mac);
+				devices.setProductId(productId);
+				devices.setDeviceName(deviceName);
+				devices.setAddress(address);
+				devices.setLongitude(longitude);
+				devices.setLatitude(latitude);
+				devices.setCreateTime(date);
+				devices.setOnline(false);
+				
+				datastore.save(devices);
+				
+				Query<Products> queryProduct = datastore.createQuery(Products.class)
+											.field("productId").equal(productId);
+				UpdateOperations<Products> updateProduct = datastore.createUpdateOperations(Products.class)
+											.inc("total", 1);
+				datastore.update(queryProduct, updateProduct);
+				db.Disconnect();
+				return "设备创建成功";
+			}
+			else{
+				db.Disconnect();
+				return "设备已经创建";
+			}
 		}
 	}
 

@@ -20,8 +20,9 @@ public class UserRegisterTest {
 		// TODO 自动生成的方法存根
 		UserRegister register = new UserRegister();
 		
-		String result = register.insertUser("18380421129", "3573551");//执行两次判断重复注册有没有差别
+		//String result = register.insertUser("18380421129", "3573551");//执行两次判断重复注册有没有差别
 		//String result = register.insertUser("18380421129", "123456");//判断用户名相同、密码不同
+		String result = register.insertUser("zhkai0427@gmail.com", "123456");
 		if(result.equals("连接数据库失败")){
 			System.out.println(result);
 		}

@@ -19,7 +19,7 @@ public class UserRegister {
 		if(!db.Connect()){
 			return "连接数据库失败";
 		}
-
+//密码不能是中文
 		datastore = db.getDatastore();
 		String tokenId = MD5.GetMD5Code(userName + userPwd);
 		try{

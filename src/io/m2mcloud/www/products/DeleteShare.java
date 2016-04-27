@@ -34,8 +34,7 @@ public class DeleteShare {
 		}
 		else{//判断分享者存不存在
 			Users share = datastore.createQuery(Users.class)
-					.field("userName").equal(shareName)
-					.field("products.productId").equal(productId).get();
+					.field("userName").equal(shareName).get();
 			if(share == null){
 				db.Disconnect();
 				return "分享者不存在";
@@ -43,22 +42,22 @@ public class DeleteShare {
 			else{//判断该分享者有没有被分享该产品
 				int size = share.getProducts().size();
 				for (int i = 0; i < size; i++) {
-					if(!share.getProducts().get(i).getProductId().equals(productId)){
+					if(share.getProducts().get(i).getProductId().equals(productId)){
+						UserProducts up = new UserProducts();
+						up.setProductId(productId);
+						up.setRole("share");
+						Query<Users> queryProducts = datastore.createQuery(Users.class)
+								.field("products")
+								.hasThisElement(up);
+						UpdateOperations<Users> updateProducts = datastore.createUpdateOperations(Users.class)
+																	.removeAll("products", up);
+						datastore.update(queryProducts, updateProducts);
 						db.Disconnect();
-						return "该分享者还没有被分享";
+						return "删除分享者成功";
 					}
 				}
-				UserProducts up = new UserProducts();
-				up.setProductId(productId);
-				up.setRole("share");
-				Query<Users> queryProducts = datastore.createQuery(Users.class)
-						.field("products")
-						.hasThisElement(up);
-				UpdateOperations<Users> updateProducts = datastore.createUpdateOperations(Users.class)
-															.removeAll("products", up);
-				UpdateResults results = datastore.update(queryProducts, updateProducts);
 				db.Disconnect();
-				return "删除分享者成功";
+				return "该分享者还没有被分享";
 			}
 		}
 		
