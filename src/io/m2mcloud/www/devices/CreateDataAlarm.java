@@ -46,20 +46,28 @@ public class CreateDataAlarm {
 				return "没有找到数据点";//没有找到产品、设备、数据点都会有这个
 			}
 			else{
-				Date date = new Date();
-				alarm = new NodeAlarm();
-				
-				alarm.setNodeId(nodeId);
-				alarm.setAlarmName(alarmName);
-				alarm.setAlarmType(alarmType);
-				alarm.setThreshold0(threshold0);
-				alarm.setThreshold1(threshold1);
-				alarm.setAlarmCreateTime(date);
-				
-				devices.getAlarm().add(alarm);
-				datastore.save(devices);
-				db.Disconnect();
-				return "创建警告成功";//没有找到产品、设备、数据点都会有这个
+				Query<Devices> queryNode = datastore.createQuery(Devices.class)
+						.field("alarm.nodeId").equal(nodeId);
+				if(queryNode.get() == null){
+					Date date = new Date();
+					alarm = new NodeAlarm();
+					
+					alarm.setNodeId(nodeId);
+					alarm.setAlarmName(alarmName);
+					alarm.setAlarmType(alarmType);
+					alarm.setThreshold0(threshold0);
+					alarm.setThreshold1(threshold1);
+					alarm.setAlarmCreateTime(date);
+					
+					devices.getAlarm().add(alarm);
+					datastore.save(devices);
+					db.Disconnect();
+					return "创建警告成功";//没有找到产品、设备、数据点都会有这个
+				}
+				else{
+					db.Disconnect();
+					return "已经插入了警告";//没有找到产品、设备、数据点都会有这个
+				}
 			}
 		}
 	}

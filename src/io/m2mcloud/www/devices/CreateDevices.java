@@ -1,5 +1,7 @@
 package io.m2mcloud.www.devices;
 
+import java.util.Date;
+
 import io.m2mcloud.www.collections.Devices;
 import io.m2mcloud.www.collections.Products;
 import io.m2mcloud.www.collections.Users;
@@ -38,6 +40,7 @@ public class CreateDevices {
 			return "用户无权注册设备";
 		}
 		else{//还需要修改total
+			Date date = new Date();
 			String deviceId = MD5.GetMD5Code(productId + mac);
 			Devices devices = new Devices();
 			devices.setDeviceId(deviceId);
@@ -47,6 +50,8 @@ public class CreateDevices {
 			devices.setAddress(address);
 			devices.setLongitude(longitude);
 			devices.setLatitude(latitude);
+			devices.setCreateTime(date);
+			devices.setOnline(false);
 			
 			datastore.save(devices);
 			

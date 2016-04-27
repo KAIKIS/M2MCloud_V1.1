@@ -1,6 +1,7 @@
 package io.m2mcloud.www.collections;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.mongodb.morphia.annotations.Embedded;
@@ -19,6 +20,8 @@ public class Devices {
 	private String clientIp;
 	private String longitude;
 	private String latitude;
+	private Date createTime;
+	private Boolean online;
 	@Embedded
 	private List<DataNode> node = new ArrayList<DataNode>();
 	@Embedded
@@ -84,6 +87,17 @@ public class Devices {
 	public void setAlarm(List<NodeAlarm> alarm) {
 		this.alarm = alarm;
 	}
-
+	public Date getCreateTime() {
+		return createTime;
+	}
+	public void setCreateTime(Date createTime) {
+		this.createTime = createTime;
+	}
+	public Boolean getOnline() {
+		return online;
+	}
+	public void setOnline(Boolean online) {
+		this.online = online;
+	}
 	
 }
